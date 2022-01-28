@@ -1,0 +1,59 @@
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Jennifer
+ */
+public class teste {
+        public static void main(String[] args) {
+            
+        Scanner teclado=new Scanner(System.in);
+
+        
+        long[] valor= new long[4]; 
+
+        System.out.println("Digite a idade do Adriano:");
+        valor[0]=teclado.nextLong();
+        System.out.println("Digite a idade da Bruna:");
+        valor[1]=teclado.nextLong();
+        System.out.println("Digite a idade da Beatriz:");
+        valor[2]=teclado.nextLong();
+        System.out.println("Digite a idade do Raul:");
+        valor[3]=teclado.nextLong();
+
+        teclado.close(); 
+
+        boolean flag; 
+
+        do {
+            
+            flag = false; 
+
+            
+            for(int i=0; i < valor.length - 1; i++) {
+
+              
+              if (valor[i] > valor[i + 1]) {
+
+                  long aux = valor[i]; 
+                  valor[i] = valor[i + 1];
+                  valor[i + 1] = aux;
+
+                  flag = true;
+              }
+            }
+        } while (flag); 
+
+        System.out.println("As idades na ordem crescente são: " + Arrays.toString(valor));
+
+    }
+    
+}
